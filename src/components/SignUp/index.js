@@ -11,6 +11,9 @@ const SignUp = () => {
                     <Col md={4} className="d-md-block d-sm-none"></Col>
                     <Col className="center-column" md={4}>
                         <div className="signup-box">
+                            <div className="signup-form">
+                                <h1 className="signup-title">Sign Up</h1>
+                            </div>
                         </div>
                     </Col>
                     <Col md={4} className="d-md-block d-sm-none"></Col>
