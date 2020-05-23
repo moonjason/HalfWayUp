@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import App from './components/App/App';
+
+import Firebase, { FirebaseContext } from './components/Firebase';
 
 ReactDOM.render(
-  <Router>
+  <FirebaseContext.Provider value={new Firebase()}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Router>, 
-  document.getElementById('root')
+  </FirebaseContext.Provider>
+  , document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
