@@ -3,6 +3,10 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
+import { withFirebase } from '../Firebase/';
+import SignInGoogleBase from '../SignInGoogleBase/SignInGoogleBase';
+
+
 const Login = () => {
     return(
         <div className="login">
@@ -20,7 +24,7 @@ const Login = () => {
                                 <input type="email" placeholder="john@example.com"/>
                                 <p className="signup-pass1">Password:</p>
                                 <input type="password" placeholder="Password"/>
-                                {/* <SignInGoogle /> */}
+                                <SignInGoogleBase />
                                 <div className="signup-btns-container">
                                     <button className="signup-back"><Link to="/" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
                                     <button className="signup-submit" type="submit">Login</button>
@@ -35,4 +39,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default withFirebase(Login);
