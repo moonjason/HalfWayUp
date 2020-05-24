@@ -12,7 +12,7 @@ body {
 .signup-container {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .center-column {
@@ -33,4 +33,17 @@ body {
 
 .signup-form {
     color: #07889B;
+}
+
+.app-logo {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.app-logo h1{
+    font-family: 'Sriracha', cursive;
+    font-size: 48px;
 }
