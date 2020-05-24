@@ -7,10 +7,23 @@ body {
     background-color: #66b9bf;
 }
 
+.app-logo {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.app-logo h1{
+    font-family: 'Sriracha', cursive;
+    font-size: 52px;
+}
+
+
 /* *** SignUp Page *** */
 
 .signup-container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -33,17 +46,43 @@ body {
 
 .signup-form {
     color: #07889B;
-}
-
-.app-logo {
-    height: 200px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: whitesmoke;
+    padding-top: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.app-logo h1{
-    font-family: 'Sriracha', cursive;
-    font-size: 48px;
+.signup-form p{
+    text-align: center;
+    font-size: 18px;
+}
+
+.signup-form input {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 4px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: .5px solid rgb(41, 41, 41)
+}
+
+.signup-form input:focus{
+    border: .5px solid #FC4A1A;
+    outline: none;
+}
+.signup-form-inner {
+    padding-top: 15px;
+}
+
+.signup-btns-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.signup-btns-container button {
+    margin: 0 8px;
+    padding: 0 15px;
 }
