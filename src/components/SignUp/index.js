@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -24,8 +26,8 @@ const SignUp = () => {
                                         <p className="signup-pass2">Confirm password:</p>
                                         <input type="password" placeholder="Confirm Password"/>
                                         <div className="signup-btns-container">
-                                            <button>Back</button>
-                                            <button type ="submit">Submit</button>
+                                            <button className="signup-back"><Link to="/" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
+                                            <button className="signup-submit" type="submit">Submit</button>
                                         </div>
                                     </form>
                                 </div>

@@ -28,6 +28,10 @@ body {
     flex-direction: column;
 }
 
+.signup-title {
+    font-family: 'Sriracha', cursive;
+}
+
 .center-column {
     display: flex;
     flex-direction: column;
@@ -56,14 +60,14 @@ body {
 
 .signup-form p{
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .signup-form input {
     text-align: center;
     margin-bottom: 15px;
     padding: 4px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 8px;
     border: .5px solid rgb(41, 41, 41)
 }
@@ -83,6 +87,21 @@ body {
 }
 
 .signup-btns-container button {
+    font-family: 'Sriracha', cursive;
     margin: 0 8px;
-    padding: 0 15px;
+    padding: 3px 15px;
+}
+.signup-btns-container button:hover {
+    opacity: .6;
+}
+.signup-back {
+    border: 1px solid #07889B;
+    border-radius: 10px;
+    background-color: #07889B;
+}
+.signup-submit {
+    border: 1px solid #FC4A1A;
+    border-radius: 10px;
+    background-color: #FC4A1A;
+    color: whitesmoke;
 }
