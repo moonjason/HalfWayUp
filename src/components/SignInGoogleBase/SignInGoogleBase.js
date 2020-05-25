@@ -22,10 +22,10 @@ class SignInGoogleBase extends Component {
         const { error } = this.state;
         
         return (
-            <form onSubmit={this.onSubmit}>
-            <button type="submit">Sign In with Google</button>
-        
-            {error && <p>{error.message}</p>}
+            <form className="google-signin" onSubmit={this.onSubmit}>
+              <button type="submit">Sign In with Google</button>
+          
+              {error && <p className="google-error">{error.message}</p>}
             </form>
         );
     }
