@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
@@ -8,7 +8,16 @@ import SignInGoogleBase from '../SignInGoogleBase/SignInGoogleBase';
 
 
 const Login = () => {
+    const [loginInfo, setLoginInfo] = useState({
+        email: '',
+        password: ''
+    })
 
+    const onChange = (e) => 
+        setLoginInfo({  
+            ...loginInfo, 
+            [e.target.type] : e.target.value
+        })
 
     return(
         <div className="login">
@@ -23,9 +32,9 @@ const Login = () => {
                             <h1 className="signup-title">Login</h1>
                             <form className="signup-form-inner">
                                 <p className="signup-email">Email:</p>
-                                <input type="email" placeholder="john@example.com"/>
+                                <input onChange={e => onChange(e)}type="email" placeholder="john@example.com"/>
                                 <p className="signup-pass1">Password:</p>
-                                <input type="password" placeholder="Password"/>
+                                <input onChange={e => onChange(e)} type="password" placeholder="Password"/>
                                 <SignInGoogleBase />
                                 <div className="signup-btns-container">
                                     <button className="signup-back"><Link to="/signup" style={{"text-decoration": "none", "color": "whitesmoke"}}>Sign Up</Link></button>
