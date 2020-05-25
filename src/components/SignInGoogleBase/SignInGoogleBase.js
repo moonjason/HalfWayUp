@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import { withFirebase } from '../Firebase';
 
-
 class SignInGoogleBase extends Component {
     state = {  error : null };
 
@@ -23,7 +22,7 @@ class SignInGoogleBase extends Component {
         
         return (
             <form className="google-signin" onSubmit={this.onSubmit}>
-              <button type="submit">Sign In with Google</button>
+              <button type="submit"><img src="/images/btn_google.png"></img></button>
           
               {error && <p className="google-error">{error.message}</p>}
             </form>
