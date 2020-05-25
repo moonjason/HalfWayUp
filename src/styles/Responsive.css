@@ -4,7 +4,8 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .signup-box {
-        display: block;
+        width: 500px;
+        height: 500px;
     }
 }
 

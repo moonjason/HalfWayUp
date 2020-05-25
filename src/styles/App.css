@@ -41,11 +41,11 @@ body {
 
 .signup-box {
     background-color: whitesmoke;
-    width: 500px;
+    width: 80%;
     height: 500px;
     border-radius: 30px;
     box-shadow: 11px 17px 59px -18px rgba(0,0,0,0.55);
-    display: none;
+    display: block;
 }
 
 .signup-form {
