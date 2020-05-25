@@ -124,3 +124,7 @@ body {
     align-items: center;
     padding-top: 15px;
 }
+
+.google-signin button {
+    border: none;
+}
