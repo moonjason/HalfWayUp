@@ -6,12 +6,14 @@ import { withFirebase } from '../Firebase/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const SignUp = () => {
+const SignUp = ( { firebase, history } ) => {
     const [signUpInfo, setSignUpInfo] = useState({
         email: '',
         password: '',
         password2: ''
-    })
+    });
+
+    const [error, setError] = useState(null);
 
     const onChange = (e) => 
         setSignUpInfo({  
@@ -19,9 +21,17 @@ const SignUp = () => {
             [e.target.name] : e.target.value
         })
 
-    const onSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = (e) => {        
+        firebase.doCreateUserWithEmailAndPassword(email, password)
+        .then(authUser => {
+            setSignUpInfo({email: '', password: '', password2: ''});
+            setError(null);
+        })
+        .catch(error => {
+            setError(error);
+        });
 
+        e.preventDefault();
     }
 
     const validBtn = {
@@ -41,6 +51,7 @@ const SignUp = () => {
         email === '';
 
     const btnColor = isInvalid ? invalidBtn : validBtn;
+
     return (
             <div>
                 <div className="app-logo">
@@ -62,8 +73,9 @@ const SignUp = () => {
                                         <input type="password" name="password2" onChange={e => onChange(e)} placeholder="Confirm Password"/>
                                         <div className="signup-btns-container">
                                             <button className="signup-back"><Link to="/login" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
-                                            <button className="signup-submit"style={btnColor} disabled={isInvalid} onSubmit={e => onSubmit(e)} type="submit">Submit</button>
+                                            <button className="signup-submit"style={btnColor} disabled={isInvalid} onSubmit={e => onSubmit(e)} type="submit">Submit</button>   
                                         </div>
+                                        {error && <p>{error}</p>}
                                     </form>
                                 </div>
                             </div>

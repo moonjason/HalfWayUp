@@ -7,7 +7,7 @@ import { withFirebase } from '../Firebase/';
 import SignInGoogleBase from '../SignInGoogleBase/SignInGoogleBase';
 
 
-const Login = () => {
+const Login = ( { firebase, history } ) => {
     const [loginInfo, setLoginInfo] = useState({
         email: '',
         password: ''
@@ -18,6 +18,8 @@ const Login = () => {
             ...loginInfo, 
             [e.target.type] : e.target.value
         })
+
+    
 
     return(
         <div className="login">
