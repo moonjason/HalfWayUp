@@ -20,8 +20,8 @@ const App = () => {
       <Router>
           <Switch>
               <Route exact path={'/'} render={() => <Landing/>}/>
-              <Route exact path={'/login'} render={() => <Login/>}/>
-              <Route exact path={'/signup'} render={() => <SignUp/>}/>
+              <Route exact path={'/login'} render={(routeProps) => <Login {...routeProps}/>}/>
+              <Route exact path={'/signup'} render={(routeProps) => <SignUp {...routeProps}/>}/>
               <Route component={error404} />
           </Switch>
       </Router>

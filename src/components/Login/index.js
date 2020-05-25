@@ -8,6 +8,8 @@ import SignInGoogleBase from '../SignInGoogleBase/SignInGoogleBase';
 
 
 const Login = () => {
+
+
     return(
         <div className="login">
             <div className="app-logo">
@@ -26,7 +28,7 @@ const Login = () => {
                                 <input type="password" placeholder="Password"/>
                                 <SignInGoogleBase />
                                 <div className="signup-btns-container">
-                                    <button className="signup-back"><Link to="/" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
+                                    <button className="signup-back"><Link to="/signup" style={{"text-decoration": "none", "color": "whitesmoke"}}>Sign Up</Link></button>
                                     <button className="signup-submit" type="submit">Login</button>
                                 </div>
                             </form>

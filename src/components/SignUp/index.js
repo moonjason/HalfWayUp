@@ -26,7 +26,7 @@ const SignUp = () => {
                                         <p className="signup-pass2">Confirm password:</p>
                                         <input type="password" placeholder="Confirm Password"/>
                                         <div className="signup-btns-container">
-                                            <button className="signup-back"><Link to="/" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
+                                            <button className="signup-back"><Link to="/login" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
                                             <button className="signup-submit" type="submit">Submit</button>
                                         </div>
                                     </form>
