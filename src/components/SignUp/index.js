@@ -26,11 +26,12 @@ const SignUp = ( { firebase, history } ) => {
         .then(authUser => {
             setSignUpInfo({email: '', password: '', password2: ''});
             setError(null);
+            history.push('/dashboard');
         })
         .catch(error => {
             setError(error);
         });
-
+        
         e.preventDefault();
     }
 

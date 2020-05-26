@@ -12,6 +12,7 @@ import Landing from '../Landing';
 import SignUp from '../SignUp';
 import Login from '../Login';
 import error404 from '../error404';
+import Dashboard from '../Dashboard';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
               <Route exact path={'/'} render={() => <Landing/>}/>
               <Route exact path={'/login'} render={(routeProps) => <Login {...routeProps}/>}/>
               <Route exact path={'/signup'} render={(routeProps) => <SignUp {...routeProps}/>}/>
+              <Route exact path={'/dashboard'} render={(routeProps) => <Dashboard {...routeProps}/>}/>
               <Route component={error404} />
           </Switch>
       </Router>
