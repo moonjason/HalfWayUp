@@ -12,6 +12,7 @@ const Login = ( { firebase, history } ) => {
         email: '',
         password: ''
     })
+    const [error, setError] = useState(null);
 
     const onChange = (e) => 
         setLoginInfo({  
@@ -19,7 +20,17 @@ const Login = ( { firebase, history } ) => {
             [e.target.type] : e.target.value
         })
 
-    
+    const onSubmit = e => {
+        firebase.doSignInwithEmailAndPassword(loginInfo.email, loginInfo.password)
+        .then(socialAuthUser => {
+            setLoginInfo({email: '', password: ''});
+            history.push('/dashboard');
+          })
+          .catch(error => {
+            setError({ error });
+          });
+        e.preventDefault();
+    }
 
     return(
         <div className="login">
@@ -38,6 +49,7 @@ const Login = ( { firebase, history } ) => {
                                 <p className="signup-pass1">Password:</p>
                                 <input onChange={e => onChange(e)} type="password" placeholder="Password"/>
                                 <SignInGoogleBase />
+                                {error && <p className="google-error">{error.message}</p>}
                                 <div className="signup-btns-container">
                                     <button className="signup-back"><Link to="/signup" style={{"text-decoration": "none", "color": "whitesmoke"}}>Sign Up</Link></button>
                                     <button className="signup-submit" type="submit">Login</button>

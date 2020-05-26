@@ -14,7 +14,7 @@ class SignInGoogleBase extends Component {
           this.props.firebase.doSignInWithGoogle()
           .then(socialAuthUser => {
             this.setState({ error: null });
-            this.props.history.push('/');
+            this.props.history.push('/dashboard');
           })
           .catch(error => {
             this.setState({ error });
