@@ -65,7 +65,7 @@ const SignUp = ( { firebase, history } ) => {
                             <div className="signup-box">
                                 <div className="signup-form">
                                     <h1 className="signup-title">Sign Up</h1>
-                                    <form className="signup-form-inner">
+                                    <form className="signup-form-inner" onSubmit={e => onSubmit(e)}>
                                         <p className="signup-email">Email:</p>
                                         <input type="email"name="email" onChange={e => onChange(e)} placeholder="john@example.com"/>
                                         <p className="signup-pass1">Create a password:</p>
@@ -74,7 +74,7 @@ const SignUp = ( { firebase, history } ) => {
                                         <input type="password" name="password2" onChange={e => onChange(e)} placeholder="Confirm Password"/>
                                         <div className="signup-btns-container">
                                             <button className="signup-back"><Link to="/login" style={{"text-decoration": "none", "color": "whitesmoke"}}>Back</Link></button>
-                                            <button className="signup-submit"style={btnColor} disabled={isInvalid} onSubmit={e => onSubmit(e)} type="submit">Submit</button>   
+                                            <button className="signup-submit"style={btnColor} disabled={isInvalid} type="submit">Submit</button>   
                                         </div>
                                         {error && <p>{error}</p>}
                                     </form>

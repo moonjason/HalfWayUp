@@ -43,7 +43,7 @@ const Login = ( { firebase, history } ) => {
                     <div className="signup-box">
                         <div className="signup-form">
                             <h1 className="signup-title">Login</h1>
-                            <form className="signup-form-inner">
+                            <form className="signup-form-inner" onSubmit={e => onSubmit(e)}>
                                 <p className="signup-email">Email:</p>
                                 <input onChange={e => onChange(e)}type="email" placeholder="john@example.com"/>
                                 <p className="signup-pass1">Password:</p>
